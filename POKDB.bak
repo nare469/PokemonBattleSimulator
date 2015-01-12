@@ -1,0 +1,1760 @@
+//Version 1.7 - Last edited by Narendran Srinivasan 12/10/2013
+
+//Version 1.1.0 - Acid modified, Arbok created.
+//Version 1.1.1 - Ancientpower modified, toxic and fissure created.
+
+//Version 1.2 - Koga Sabrina Erika and Surge added
+
+//Version 1.3 - Blaine added
+
+//Version 1.4 - Edits made, Splash and Magikarp added
+
+//Version 1.5 - Elite Four added
+
+//1.6 - Johto legendaries added
+//		-update; few pokemon have newer attacks now.
+
+//1.7 - Hoenn legendaries added
+
+
+#include "pokdecl.h"
+#include <string.h>
+#ifndef POKDB_H
+#define POKDB_H
+/*
+	pokemon articuno;
+		pokemon shivam;
+	pokemon blastoise;
+	pokemon typhlosion;
+		pokemon venusaur;
+	pokemon entei;
+	pokemon raikou;
+	pokemon hooh;
+	pokemon lugia;
+	pokemon suicune;
+	pokemon charizard;
+	pokemon tyranitar;
+	pokemon persian;
+	pokemon rhydon;
+		pokemon swampert;
+		pokemon sceptile;
+		pokemon blaziken;
+			pokemon moltres;
+pokemon piloswine;
+pokemon lapras;
+pokemon jynx;
+pokemon feraligatr;
+pokemon meganium;
+pokemon zapdos;
+pokemon mewtwo;
+pokemon vileplume;
+pokemon victreebel;
+pokemon weezing;
+pokemon crobat;
+pokemon venomoth;
+pokemon gyarados;
+pokemon ditto;
+pokemon ashbulbasaur;
+pokemon ashpikachu;
+pokemon ashcharizard;
+pokemon steelix;
+pokemon kabutops;
+pokemon graveler;
+pokemon lanturn;
+pokemon starmie;
+pokemon electabuzz;
+pokemon raichu;
+pokemon magneton;
+pokemon arbok;
+pokemon muk;
+pokemon kangaskhan;
+pokemon slowking;
+pokemon alakazam;
+pokemon dragonite;
+pokemon aerodactyl;
+pokemon arcanine;
+pokemon ninetales;
+pokemon magmar;
+pokemon magikarp;
+pokemon hitmonchan;
+pokemon machamp;
+pokemon groudon;
+pokemon kyogre;
+pokemon rayquaza;
+pokemon jirachi;
+pokemon latios;
+pokemon latias;
+pokemon gengar;
+*/
+trainer blaine("Blaine\0");
+trainer red("Red\0");
+trainer koga("Koga\0");
+trainer sabrina("Sabrina\0");
+trainer blue("Blue\0");
+trainer green("Green\0");
+trainer ash("Ash\0");
+trainer brock("Brock\0");
+trainer misty("Misty\0");
+trainer erika("Erika\0");
+trainer ltsurge("Lt. Surge\0");
+trainer giovanni("Giovanni\0");
+trainer lorelei("Lorelei\0");
+trainer bruno("Bruno\0");
+trainer agatha("Agatha\0");
+trainer lance("Lance\0");
+
+//creating the move flamethrower
+
+
+void dec()
+{
+		/*
+		attack flamethrower;
+		attack blastburn;
+		attack weirdlook;
+		attack stunspore;
+		attack sleeppowder;
+		attack sing;
+		attack lecture;
+		attack psychicattack;
+		attack slam;
+		attack disprove;
+		attack willowisp;
+
+		flamethrower.power = 95;
+		flamethrower.PP = 15;
+		flamethrower.accuracy = 100;
+		flamethrower.type = fire;
+		strcpy(flamethrower.atkname, "Flamethrower");
+		flamethrower.cat = 7;
+		flamethrower.condperc = 15;
+		flamethrower.effecttype = brn;
+		flamethrower.critlvl = 1;
+	attack shadowball;
+		shadowball.power = 80;
+		shadowball.PP = 15;
+		shadowball.accuracy = 100;
+		shadowball.type = ghost;
+		strcpy(shadowball.atkname, "Shadow Ball");
+		shadowball.cat = 10;
+		shadowball.effecttype = norm;
+		shadowball.critlvl = 1;
+
+	attack doomdesire;
+		doomdesire.power = 120;
+		doomdesire.PP = 5;
+		doomdesire.accuracy = 85;
+		doomdesire.type = steel;
+		strcpy(doomdesire.atkname, "Doom Desire");
+		doomdesire.cat = 0;
+		doomdesire.effecttype = norm;
+		doomdesire.critlvl = 1;
+
+
+	attack sludgebomb;
+		sludgebomb.power = 90;
+		sludgebomb.PP = 10;
+		sludgebomb.accuracy = 100;
+		sludgebomb.type = poison;
+		strcpy(sludgebomb.atkname, "Sludgebomb");
+		sludgebomb.cat = 7;
+		sludgebomb.condperc = 30;
+		sludgebomb.effecttype = psn;
+		sludgebomb.critlvl = 1;
+
+	attack bodyslam;
+		bodyslam.power = 85;
+		bodyslam.PP = 15;
+		bodyslam.accuracy = 100;
+		bodyslam.type = normal;
+		strcpy(bodyslam.atkname, "Body Slam");
+		bodyslam.cat = 7;
+		bodyslam.condperc = 30;
+		bodyslam.effecttype = par;
+		bodyslam.critlvl = 1;
+
+		attack tackle;
+		tackle.power = 50;
+		tackle.PP = 35;
+		tackle.accuracy = 100;
+		tackle.type = normal;
+		strcpy(tackle.atkname, "Tackle");
+		tackle.cat = 0;
+		tackle.effecttype = norm;
+		tackle.critlvl = 1;
+
+	attack brickbreak;
+		brickbreak.power = 75;
+		brickbreak.PP = 15;
+		brickbreak.accuracy = 100;
+		brickbreak.type = fight;
+		strcpy(brickbreak.atkname, "Brick Break");
+		brickbreak.cat = 0;
+		brickbreak.effecttype = norm;
+		brickbreak.critlvl = 1;
+
+
+		attack splash;
+		splash.PP = 35;
+		splash.type = water;
+		strcpy(splash.atkname, "Splash");
+		splash.cat = 12;
+	//creating the move blast burn
+
+		blastburn.power = 150;
+		blastburn.PP = 5;
+		blastburn.accuracy = 90;
+		blastburn.type = fire;
+		strcpy(blastburn.atkname,"Blast Burn");
+		blastburn.cat = 1;
+		blastburn.effecttype = norm;
+		blastburn.critlvl = 1;
+	//creating the move Sleep Powder
+
+		sleeppowder.cat = 2;
+		sleeppowder.accuracy = 75;
+		sleeppowder.PP = 15;
+		sleeppowder.type = grass;
+		strcpy(sleeppowder.atkname,"Sleep Powder");
+		sleeppowder.effecttype = slp;
+
+	attack rest;
+		rest.cat = 2;
+		rest.accuracy = 100;
+		rest.PP = 15;
+		rest.type = grass;
+		strcpy(rest.atkname,"Rest ");
+		rest.effecttype = slp;
+
+	//Creating 'sing'
+
+		sing.cat = 2;
+		sing.accuracy = 55;
+		sing.PP = 15;
+		sing.type = normal;
+		strcpy(sing.atkname,"Sing");
+		sing.effecttype = slp;
+
+	//creating the move Stun Spore
+
+		stunspore.cat = 2;
+		stunspore.accuracy = 75;
+		stunspore.PP = 30;
+		stunspore.type = grass;
+		strcpy(stunspore.atkname,"Stun Spore");
+		stunspore.effecttype = par;
+
+	// Weird Look
+
+		weirdlook.cat = 2;
+		weirdlook.accuracy = 100;
+		weirdlook.PP = 30;
+		weirdlook.type = bug;
+		strcpy(weirdlook.atkname,"Weird Look");
+		weirdlook.effecttype = par;
+	// Lecture
+		lecture.cat = 2;
+		lecture.accuracy = 75;
+		lecture.PP = 15;
+		lecture.type = ghost;
+		strcpy(lecture.atkname,"Lecture");
+		lecture.effecttype = slp;
+
+	attack payday;
+		payday.cat = 0;
+		payday.power = 40;
+		payday.accuracy = 100;
+		payday.PP = 20;
+		payday.type = normal;
+		payday.effecttype = norm;
+		strcpy(payday.atkname,"Pay Day");
+		payday.critlvl = 1;
+
+		slam.cat = 0;
+		slam.power = 80;
+		slam.accuracy = 75;
+		slam.PP = 20;
+		slam.type = normal;
+		slam.effecttype = norm;
+		strcpy(slam.atkname,"Slam ");
+		slam.critlvl = 1;
+
+	attack cut;
+		cut.cat = 0;
+		cut.power = 55;
+		cut.accuracy = 95;
+		cut.PP = 30;
+		cut.type = normal;
+		cut.effecttype = norm;
+		strcpy(cut.atkname,"Cut  ");
+		cut.critlvl = 1;
+
+		strcpy(disprove.atkname, "Disprove");
+		disprove.PP = 7;
+		disprove.accuracy = 10;
+		disprove.type = ghost;
+		disprove.cat = 6;
+		disprove.effecttype = norm;
+		disprove.critlvl = 1;
+
+	//Creating will-o-wisp
+
+		willowisp.cat = 2;
+		willowisp.accuracy = 75;
+		willowisp.PP = 15;
+		willowisp.type = ghost;
+		strcpy(willowisp.atkname,"Will-o-wisp");
+		willowisp.effecttype = brn;
+
+	attack code;
+		strcpy(code.atkname, "Code ");
+		code.power = 120;
+		code.PP = 25;
+		code.accuracy = 100;
+		code.type = dragon;
+		code.cat = 4;
+		code.effecttype = norm;
+
+
+
+	attack thunderwave;
+		thunderwave.cat = 2;
+		thunderwave.accuracy = 100;
+		thunderwave.PP = 20;
+		thunderwave.type = electr;
+		strcpy(thunderwave.atkname,"Thunder Wave");
+		thunderwave.effecttype = par;
+
+	attack poisonpowder;
+		poisonpowder.cat = 2;
+		poisonpowder.accuracy = 75;
+		poisonpowder.PP = 35;
+		poisonpowder.type = poison;
+		strcpy(poisonpowder.atkname,"Poisonpowder");
+		poisonpowder.effecttype = psn;
+
+	attack toxic;
+		toxic.cat = 2;
+		toxic.accuracy = 90;
+		toxic.PP = 10;
+		toxic.type = poison;
+		strcpy(toxic.atkname,"Toxic");
+		toxic.effecttype = psn;
+
+	//creating the move dynamicpunch
+	attack dynamicpunch;
+		strcpy(dynamicpunch.atkname, "Dynamicpunch");
+		dynamicpunch.power = 100;
+		dynamicpunch.PP = 5;
+		dynamicpunch.accuracy = 50;
+		dynamicpunch.type = fight;
+		dynamicpunch.cat = 0;
+		dynamicpunch.effecttype = norm;
+		dynamicpunch.critlvl = 1;
+
+	//creating the move hyperbeam
+	attack hyperbeam;
+		strcpy(hyperbeam.atkname, "Hyperbeam");
+		hyperbeam.power = 150;
+		hyperbeam.PP = 5;
+		hyperbeam.accuracy = 90;
+		hyperbeam.type = normal;
+		hyperbeam.cat = 1;
+		hyperbeam.effecttype = norm;
+		hyperbeam.critlvl = 1;
+
+
+	//creating the move solarbeam
+	attack solarbeam;
+		strcpy(solarbeam.atkname, "Solarbeam");
+		solarbeam.power = 120;
+		solarbeam.PP = 10;
+		solarbeam.accuracy = 100;
+		solarbeam.type = grass;
+		solarbeam.cat = 3;
+		solarbeam.effecttype = norm;
+		solarbeam.critlvl = 1;
+
+	attack skyattack;
+		strcpy(skyattack.atkname, "Sky Attack");
+		skyattack.power = 140;
+		skyattack.PP = 5;
+		skyattack.accuracy = 90;
+		skyattack.type = flying;
+		skyattack.cat = 3;
+		skyattack.effecttype = norm;
+		skyattack.critlvl = 1;
+
+
+	//creating the move earthquake
+	attack earthquake;
+		strcpy(earthquake.atkname, "Earthquake");
+		earthquake.power = 100;
+		earthquake.PP = 10;
+		earthquake.accuracy = 100;
+		earthquake.type = ground;
+		earthquake.cat = 0;
+		earthquake.effecttype = norm;
+		earthquake.critlvl = 1;
+
+	attack thunderbolt;
+		strcpy(thunderbolt.atkname, "Thunderbolt");
+		thunderbolt.power = 95;
+		thunderbolt.PP = 15;
+		thunderbolt.accuracy = 100;
+		thunderbolt.type = electr;
+		thunderbolt.cat = 0;
+		thunderbolt.effecttype = norm;
+		thunderbolt.critlvl = 1;
+
+	attack thunder;
+		strcpy(thunder.atkname, "Thunder");
+		thunder.power = 120;
+		thunder.PP = 10;
+		thunder.accuracy = 90;
+		thunder.type = electr;
+		thunder.cat = 0;
+		thunder.effecttype = norm;
+		thunder.critlvl = 1;
+
+	//creating the move frenzy plant
+	attack frenzyplant;
+		strcpy(frenzyplant.atkname, "Frenzy Plant");
+		frenzyplant.power = 150;
+		frenzyplant.PP = 5;
+		frenzyplant.accuracy = 90;
+		frenzyplant.type = grass;
+		frenzyplant.cat = 1;
+		frenzyplant.effecttype = norm;
+		frenzyplant.critlvl = 1;
+
+	//creating the move overheat
+	attack overheat;
+		strcpy(overheat.atkname, "Overheat");
+		overheat.power = 140;
+		overheat.PP = 5;
+		overheat.accuracy = 90;
+		overheat.type = fire;
+		overheat.cat = 10;
+		overheat.effecttype = norm;
+		overheat.critlvl = 1;
+
+//creating hydrocannon
+	attack hydrocannon;
+		strcpy(hydrocannon.atkname, "Hydro Cannon");
+		hydrocannon.power = 150;
+		hydrocannon.PP = 5;
+		hydrocannon.accuracy = 95;
+		hydrocannon.cat = 1;
+		hydrocannon.type = water;
+		hydrocannon.effecttype = norm;
+		hydrocannon.critlvl = 1;
+
+//Sheer Freakin' cold!!
+	attack sheercold;
+		strcpy(sheercold.atkname, "Sheer Cold");
+		sheercold.PP = 5;
+		sheercold.accuracy = 30;
+		sheercold.cat = 6;
+		sheercold.type = ice;
+		sheercold.effecttype = norm;
+
+	attack horndrill;
+		strcpy(horndrill.atkname, "Horn Drill");
+		horndrill.PP = 5;
+		horndrill.accuracy = 30;
+		horndrill.cat = 6;
+		horndrill.type = ground;
+		horndrill.effecttype = norm;
+
+	attack fissure;
+		strcpy(fissure.atkname, "Fissure");
+		fissure.PP = 5;
+		fissure.accuracy = 30;
+		fissure.cat = 6;
+		fissure.type = ground;
+		fissure.effecttype = norm;
+
+
+//creating aerialace
+	attack aerialace;
+		strcpy(aerialace.atkname, "Aerial Ace");
+		aerialace.power = 60;
+		aerialace.PP = 20;
+		aerialace.accuracy = 10000;
+		aerialace.cat = 0;
+		aerialace.type = flying;
+		aerialace.effecttype = norm;
+		aerialace.critlvl = 1;
+
+//creating hydropump
+	attack hydropump;
+		strcpy(hydropump.atkname, "Hydro Pump");
+		hydropump.power = 120;
+		hydropump.PP = 5;
+		hydropump.accuracy = 80;
+		hydropump.type = water;
+		hydropump.cat = 0;
+		hydropump.effecttype = norm;
+		hydropump.critlvl = 1;
+//creating strength
+	attack strength;
+		strcpy(strength.atkname, "Strength");
+		strength.power = 80;
+		strength.PP = 15;
+		strength.accuracy = 100;
+		strength.type = normal;
+		strength.cat = 0;
+		strength.effecttype = norm;
+		strength.critlvl = 1;
+
+	attack drillpeck;
+		strcpy(drillpeck.atkname, "Drill Peck");
+		drillpeck.power = 80;
+		drillpeck.PP = 20;
+		drillpeck.accuracy = 100;
+		drillpeck.type = flying;
+		drillpeck.cat = 0;
+		drillpeck.effecttype = norm;
+		drillpeck.critlvl = 1;
+
+//creating rockslide
+	attack rockslide;
+		strcpy(rockslide.atkname, "Rock Slide");
+		rockslide.power = 75;
+		rockslide.accuracy = 90;
+		rockslide.PP = 10;
+		rockslide.type = rock;
+		rockslide.cat = 0;
+		rockslide.effecttype = norm;
+		rockslide.critlvl = 1;
+
+	attack thunderpunch;
+		strcpy(thunderpunch.atkname, "Thunderpunch");
+		thunderpunch.power = 75;
+		thunderpunch.accuracy = 100;
+		thunderpunch.PP = 15;
+		thunderpunch.type = electr;
+		thunderpunch.cat = 7;
+		thunderpunch.effecttype = par;
+		thunderpunch.condperc = 15;
+		thunderpunch.critlvl = 1;
+
+	attack shockwave;
+		strcpy(shockwave.atkname, "Shock Wave");
+		shockwave.power = 60;
+		shockwave.accuracy = 1000;
+		shockwave.PP = 20;
+		shockwave.type = electr;
+		shockwave.cat = 0;
+		shockwave.critlvl = 1;
+
+  attack takedown;
+		strcpy(takedown.atkname, "Take Down");
+		takedown.power = 90;
+		takedown.accuracy = 85;
+		takedown.PP = 20;
+		takedown.type = normal;
+		takedown.cat = 8;
+		takedown.critlvl = 1;
+
+	attack doubleedge;
+		strcpy(doubleedge.atkname, "Double Edge");
+		doubleedge.power = 120;
+		doubleedge.accuracy = 100;
+		doubleedge.PP = 15;
+		doubleedge.type = normal;
+		doubleedge.cat = 8;
+		doubleedge.critlvl = 1;
+
+
+	attack firepunch;
+		strcpy(firepunch.atkname, "Fire Punch");
+		firepunch.power = 75;
+		firepunch.accuracy = 100;
+		firepunch.PP = 15;
+		firepunch.type = fire;
+		firepunch.cat = 7;
+		firepunch.effecttype = brn;
+		firepunch.condperc = 15;
+		firepunch.critlvl = 1;
+
+
+//creating crunch
+	attack crunch;
+		strcpy (crunch.atkname, "Crunch");
+		crunch.power = 80;
+		crunch.accuracy = 100;
+		crunch.PP = 15;
+		crunch.type = dark;
+		crunch.cat = 0;
+		crunch.effecttype = norm;
+		crunch.critlvl = 1;
+
+	attack dash;
+		strcpy (dash.atkname, "-     ");
+		dash.PP = 0;
+		dash.type = none;
+
+//Giga Drain
+	attack gigadrain;
+		strcpy (gigadrain.atkname, "Giga Drain");
+		gigadrain.power = 60;
+		gigadrain.accuracy = 100;
+		gigadrain.PP = 5;
+		gigadrain.type = grass;
+		gigadrain.cat = 11;
+		gigadrain.effecttype = norm;
+		gigadrain.critlvl = 1;
+
+	attack razorleaf;
+		strcpy (razorleaf.atkname, "Razor Leaf");
+		razorleaf.power = 55;
+		razorleaf.accuracy = 95;
+		razorleaf.PP = 15;
+		razorleaf.type = grass;
+		razorleaf.cat = 0;
+		razorleaf.effecttype = norm;
+		razorleaf.critlvl = 1;
+
+	attack surf;
+		strcpy (surf.atkname, "Surf ");
+		surf.power = 95;
+		surf.accuracy = 100;
+		surf.PP = 15;
+		surf.type = water;
+		surf.cat = 0;
+		surf.effecttype = norm;
+		surf.critlvl = 1;
+
+	attack megadrain;
+		strcpy (megadrain.atkname, "Mega Drain");
+		megadrain.power = 40;
+		megadrain.accuracy = 100;
+		megadrain.PP = 15;
+		megadrain.type = grass;
+		megadrain.cat = 11;
+		megadrain.effecttype = norm;
+		megadrain.critlvl = 1;
+
+	attack fireblast;
+		strcpy (fireblast.atkname, "Fire Blast");
+		fireblast.power = 120;
+		fireblast.accuracy = 75;
+		fireblast.PP = 5;
+		fireblast.type = fire;
+		fireblast.cat = 0;
+		fireblast.effecttype = norm;
+		fireblast.critlvl = 1;
+
+	attack blazekick;
+		strcpy (blazekick.atkname, "Blaze Kick");
+		blazekick.power = 90;
+		blazekick.accuracy = 85;
+		blazekick.PP = 10;
+		blazekick.type = fire;
+		blazekick.cat = 0;
+		blazekick.effecttype = norm;
+		blazekick.critlvl = 2;
+
+	attack skyuppercut;
+		strcpy (skyuppercut.atkname, "Sky Uppercut");
+		skyuppercut.power = 90;
+		skyuppercut.accuracy = 85;
+		skyuppercut.PP = 10;
+		skyuppercut.type = fight;
+		skyuppercut.cat = 0;
+		skyuppercut.effecttype = norm;
+		skyuppercut.critlvl = 1;
+
+	attack megapunch;
+		strcpy (megapunch.atkname, "Mega Punch");
+		megapunch.power = 80;
+		megapunch.accuracy = 85;
+		megapunch.PP = 10;
+		megapunch.type = normal;
+		megapunch.cat = 0;
+		megapunch.effecttype = norm;
+		megapunch.critlvl = 1;
+
+	attack mudshot;
+		strcpy (mudshot.atkname, "Mud Shot");
+		mudshot.power = 55;
+		mudshot.accuracy = 95;
+		mudshot.PP = 20;
+		mudshot.type = ground;
+		mudshot.cat = 10;
+		mudshot.effecttype = norm;
+		mudshot.critlvl = 1;
+
+	attack synthesis;
+		strcpy (synthesis.atkname, "Synthesis");
+		synthesis.accuracy = 100;
+		synthesis.PP = 5;
+		synthesis.type = grass;
+		synthesis.cat = 4;
+		synthesis.effecttype = norm;
+
+	//Creating icebeam
+	attack icebeam;
+		strcpy (icebeam.atkname, "Ice Beam");
+		icebeam.power = 95;
+		icebeam.accuracy = 100;
+		icebeam.PP = 10;
+		icebeam.type = ice;
+		icebeam.cat = 0;
+		icebeam.effecttype = norm;
+		icebeam.critlvl = 1;
+
+	attack dragonclaw;
+		strcpy (dragonclaw.atkname, "Dragon Claw");
+		dragonclaw.power = 80;
+		dragonclaw.accuracy = 100;
+		dragonclaw.PP = 15;
+		dragonclaw.type = dragon;
+		dragonclaw.cat = 0;
+		dragonclaw.effecttype = norm;
+		dragonclaw.critlvl = 1;
+
+	attack blizzard;
+		strcpy (blizzard.atkname, "Blizzard");
+		blizzard.power = 120;
+		blizzard.accuracy = 70;
+		blizzard.PP = 5;
+		blizzard.type = ice;
+		blizzard.cat = 0;
+		blizzard.effecttype = norm;
+		blizzard.critlvl = 1;
+
+	attack transform;
+		strcpy (transform.atkname, "Transform");
+		transform.PP = 10;
+		transform.type = normal;
+		transform.cat = 9;
+		transform.effecttype = norm;
+
+	attack steelwing;
+		strcpy (steelwing.atkname, "Steel Wing");
+		steelwing.power = 70;
+		steelwing.accuracy = 90;
+		steelwing.PP = 25;
+		steelwing.type = steel;
+		steelwing.cat = 10;
+		steelwing.effecttype = norm;
+		steelwing.critlvl = 1;
+
+	attack extremespeed;
+		strcpy (extremespeed.atkname, "Extremespeed");
+		extremespeed.power = 80;
+		extremespeed.accuracy = 100;
+		extremespeed.PP = 5;
+		extremespeed.type = normal;
+		extremespeed.cat = 0;
+		extremespeed.effecttype = norm;
+		extremespeed.critlvl = 1;
+
+	attack mist;
+		strcpy (mist.atkname, "Mist");
+		mist.PP = 30;
+		mist.type = ice;
+		mist.cat = 13;
+		mist.effecttype = norm;
+
+  attack vinewhip;
+		strcpy (vinewhip.atkname, "Vine Whip");
+		vinewhip.power = 35;
+		vinewhip.accuracy = 100;
+		vinewhip.PP = 15;
+		vinewhip.type = grass;
+		vinewhip.cat = 0;
+		vinewhip.effecttype = norm;
+		vinewhip.critlvl = 1;
+	//Creating Acid
+	attack acid;
+		strcpy(acid.atkname, "Acid ");
+		acid.accuracy = 100;
+		acid.PP = 30;
+		acid.power = 40;
+		acid.type = poison;
+		acid.cat = 10;
+		acid.effecttype = norm;
+		acid.critlvl = 1;
+
+	attack eggbomb;
+		strcpy(eggbomb.atkname, "Eggbomb");
+		eggbomb.accuracy = 75;
+		eggbomb.PP = 10;
+		eggbomb.power = 100;
+		eggbomb.type = normal;
+		eggbomb.cat = 0;
+		eggbomb.effecttype = norm;
+		eggbomb.critlvl = 1;
+
+	attack leafblade;
+		strcpy(leafblade.atkname, "Leaf Blade");
+		leafblade.accuracy = 100;
+		leafblade.PP = 15;
+		leafblade.power = 70;
+		leafblade.type = grass;
+		leafblade.cat = 0;
+		leafblade.effecttype = norm;
+		leafblade.critlvl = 1;
+
+	attack growl;
+		strcpy (growl.atkname, "Growl");
+		growl.accuracy = 100;
+		growl.PP = 35;
+		growl.type = normal;
+		growl.cat = 5;
+		growl.effecttype = norm;
+
+	attack smokescreen;
+		strcpy (smokescreen.atkname, "Smokescreen");
+		smokescreen.accuracy = 100;
+		smokescreen.PP = 35;
+		smokescreen.type = normal;
+		smokescreen.cat = 5;
+		smokescreen.effecttype = norm;
+
+
+	attack swordsdance;
+		strcpy (swordsdance.atkname, "Swords Dance");
+		swordsdance.accuracy = 100;
+		swordsdance.PP = 30;
+		swordsdance.type = normal;
+		swordsdance.cat = 5;
+		swordsdance.effecttype = norm;
+
+
+	attack recover;
+		strcpy (recover.atkname, "Recover");
+		recover.accuracy = 100;
+		recover.PP = 10;
+		recover.type = normal;
+		recover.cat = 4;
+		recover.effecttype = norm;
+
+	attack swift;
+		strcpy (swift.atkname, "Swift");
+		swift.accuracy = 1000;
+		swift.PP = 15;
+		swift.power = 60;
+		swift.type = normal;
+		swift.cat = 0;
+		swift.effecttype = norm;
+		swift.critlvl = 1;
+
+	attack ancientpower;
+		strcpy (ancientpower.atkname, "Ancientpower");
+		ancientpower.accuracy = 100;
+		ancientpower.PP = 5;
+		ancientpower.power = 60;
+		ancientpower.type = rock;
+		ancientpower.cat = 10;
+		ancientpower.effecttype = norm;
+		ancientpower.critlvl = 1;
+
+	attack irontail;
+		strcpy (irontail.atkname, "Iron Tail");
+		irontail.accuracy = 75;
+		irontail.PP = 15;
+		irontail.power = 100;
+		irontail.type = steel;
+		irontail.cat = 10;
+		irontail.effecttype = norm;
+		irontail.critlvl = 1;
+
+	attack slash;
+		strcpy (slash.atkname, "Slash");
+		slash.accuracy = 100;
+		slash.PP = 20;
+		slash.power = 70;
+		slash.type = normal;
+		slash.cat = 0;
+		slash.effecttype = norm;
+		slash.critlvl = 2;
+
+	attack flamewheel;
+		strcpy (flamewheel.atkname, "Flame Wheel");
+		flamewheel.accuracy = 100;
+		flamewheel.PP = 25;
+		flamewheel.power = 60;
+		flamewheel.type = normal;
+		flamewheel.cat = 0;
+		flamewheel.effecttype = norm;
+		flamewheel.critlvl = 1;
+
+
+		strcpy (psychicattack.atkname, "Psychic");
+		psychicattack.accuracy = 100;
+		psychicattack.PP = 10;
+		psychicattack.power = 60;
+		psychicattack.type = psychic;
+		psychicattack.cat = 10;
+		psychicattack.effecttype = norm;
+		psychicattack.critlvl = 1;
+
+	strcpy(mewtwo.pokename,"Mewtwo");
+		mewtwo.atk =143;
+		mewtwo.def =110;
+		mewtwo.spd = 150;
+		mewtwo.maxhp = 181;
+		mewtwo.type1 = psychic;
+		mewtwo.type2 = none;
+		mewtwo.att[0] = recover;
+		mewtwo.att[1] = growl;
+		mewtwo.att[2] = swift;
+		mewtwo.att[3] = psychicattack;
+
+
+	strcpy(zapdos.pokename,"Zapdos");
+		zapdos.atk =159;
+		zapdos.def =105;
+		zapdos.spd = 120;
+		zapdos.maxhp = 165;
+		zapdos.type1 = electr;
+		zapdos.type2 = flying;
+		zapdos.att[0] = thunderwave;
+		zapdos.att[1] = thunderbolt;
+		zapdos.att[2] = thunder;
+		zapdos.att[3] = drillpeck;
+
+
+	strcpy(meganium.pokename,"Meganium");
+		meganium.atk =91;
+		meganium.def =120;
+		meganium.spd = 100;
+		meganium.maxhp = 155;
+		meganium.type1 = grass;
+		meganium.type2 = none;
+		meganium.att[0] = razorleaf;
+		meganium.att[1] = stunspore;
+		meganium.att[2] = synthesis;
+		meganium.att[3] = hyperbeam;
+
+
+	strcpy(feraligatr.pokename,"Feraligatr");
+		feraligatr.atk =112;
+		feraligatr.def =120;
+		feraligatr.spd = 98;
+		feraligatr.maxhp = 160;
+		feraligatr.type1 = water;
+		feraligatr.type2 = none;
+		feraligatr.att[0] = surf;
+		feraligatr.att[1] = hydropump;
+		feraligatr.att[2] = earthquake;
+		feraligatr.att[3] = crunch;
+
+
+strcpy(blaziken.pokename,"Blaziken");
+		blaziken.atk =126;
+		blaziken.def =90;
+		blaziken.spd = 100;
+		blaziken.maxhp = 155;
+		blaziken.type1 = fire;
+		blaziken.type2 = fight;
+		blaziken.att[0] = fireblast;
+		blaziken.att[1] = blazekick;
+		blaziken.att[2] = skyuppercut;
+		blaziken.att[3] = willowisp;
+
+strcpy(ashpikachu.pokename,"Pikachu");
+		ashpikachu.atk =111;
+		ashpikachu.def =85;
+		ashpikachu.spd = 120;
+		ashpikachu.maxhp = 135;
+		ashpikachu.type1 = electr;
+		ashpikachu.type2 = none;
+		ashpikachu.att[0] = thunderbolt;
+		ashpikachu.att[1] = thunderwave;
+		ashpikachu.att[2] = megapunch;
+		ashpikachu.att[3] = swordsdance;
+
+
+
+strcpy(sceptile.pokename,"Sceptile");
+		sceptile.atk =94;
+		sceptile.def =90;
+		sceptile.spd = 140;
+		sceptile.maxhp = 145;
+		sceptile.type1 = grass;
+		sceptile.type2 = none;
+		sceptile.att[0] = leafblade;
+		sceptile.att[1] = solarbeam;
+		sceptile.att[2] = earthquake;
+		sceptile.att[3] = poisonpowder;
+
+
+strcpy(swampert.pokename,"Swampert");
+		swampert.atk =117;
+		swampert.def =110;
+		swampert.spd = 80;
+		swampert.maxhp = 175;
+		swampert.type1 = water;
+		swampert.type2 = ground;
+		swampert.att[0] = surf;
+		swampert.att[1] = mudshot;
+		swampert.att[2] = fissure;
+		swampert.att[3] = hydropump;
+
+
+//Creating Tyranitar
+
+		strcpy(tyranitar.pokename, "Tyranitar");
+		tyranitar.atk =154;
+		tyranitar.def =130;
+		tyranitar.spd = 81;
+		tyranitar.maxhp = 175;
+		tyranitar.type1 = rock;
+		tyranitar.type2 = dark;
+		tyranitar.att[0] = rockslide;
+		tyranitar.att[1] = earthquake;
+		tyranitar.att[2] = crunch;
+		tyranitar.att[3] = hyperbeam;
+
+	//creating charizard
+
+	strcpy(charizard.pokename,"Charizard");
+		charizard.atk =129;
+		charizard.def =105;
+		charizard.spd = 108;
+		charizard.maxhp = 153;
+		charizard.type1 = fire;
+		charizard.type2 = flying;
+		charizard.att[0] = flamethrower;
+		charizard.att[1] = blastburn;
+		charizard.att[2] = earthquake;
+		charizard.att[3] = skyattack;
+
+		strcpy(ashcharizard.pokename,"Charizard");
+		ashcharizard.atk =129;
+		ashcharizard.def =94;
+		ashcharizard.spd = 120;
+		ashcharizard.maxhp = 153;
+		ashcharizard.type1 = fire;
+		ashcharizard.type2 = flying;
+		ashcharizard.att[0] = flamethrower;
+		ashcharizard.att[1] = fireblast;
+		ashcharizard.att[2] = blastburn;
+		ashcharizard.att[3] = skyattack;
+
+	//Venusaur
+
+		strcpy(venusaur.pokename,"Venusaur");
+		venusaur.atk =120 ;
+		venusaur.def = 120;
+		venusaur.spd = 90;
+		venusaur.maxhp = 155;
+		venusaur.type1 = grass;
+		venusaur.type2 = poison;
+		venusaur.att[0] = gigadrain;
+		venusaur.att[1] = frenzyplant;
+		venusaur.att[2] = hyperbeam;
+		venusaur.att[3] = earthquake;
+
+	strcpy(ashbulbasaur.pokename,"Bulbasaur");
+		ashbulbasaur.atk =120 ;
+		ashbulbasaur.def = 120;
+		ashbulbasaur.spd = 90;
+		ashbulbasaur.maxhp = 155;
+		ashbulbasaur.type1 = grass;
+		ashbulbasaur.type2 = poison;
+		ashbulbasaur.att[0] = solarbeam;
+		ashbulbasaur.att[1] = razorleaf;
+		ashbulbasaur.att[2] = vinewhip;
+		ashbulbasaur.att[3] = stunspore;
+
+	//Typhlosion
+
+
+		strcpy(typhlosion.pokename,"Typhlosion");
+		typhlosion.atk =129 ;
+		typhlosion.def = 105;
+		typhlosion.spd = 108;
+		typhlosion.maxhp = 153;
+		typhlosion.type1 = fire;
+		typhlosion.type2 = none;
+		typhlosion.att[0] = flamethrower;
+		typhlosion.att[1] = aerialace;
+		typhlosion.att[2] = hyperbeam;
+		typhlosion.att[3] = overheat;
+
+		strcpy(moltres.pokename,"Moltres");
+		moltres.atk = 105;
+		moltres.def = 125;
+		moltres.spd = 88;
+		moltres.maxhp = 154;
+		moltres.type1 = fire;
+		moltres.type2 = flying;
+		moltres.att[0] = flamethrower;
+		moltres.att[1] = skyattack;
+		moltres.att[2] = overheat;
+		moltres.att[3] = aerialace;
+	//creating blastoise
+
+		strcpy(blastoise.pokename,"Blastoise");
+		blastoise.atk = 105;
+		blastoise.def = 125;
+		blastoise.spd = 88;
+		blastoise.maxhp = 154;
+		blastoise.type1 = water;
+		blastoise.type2 = none;
+		blastoise.att[0] = hydrocannon;
+		blastoise.att[1] = earthquake;
+		blastoise.att[2] = hydropump;
+		blastoise.att[3] = strength;
+
+	strcpy(shivam.pokename,"Shivam");
+		shivam.atk =300;
+		shivam.def =300;
+		shivam.spd = 300;
+		shivam.maxhp = 300;
+		shivam.type1 = none;
+		shivam.type2 = none;
+		shivam.att[0] = flamethrower;
+		shivam.att[1] = flamethrower;
+		shivam.att[2] = flamethrower;
+		shivam.att[3] = flamethrower;
+
+//Articuno
+
+strcpy(articuno.pokename,"Articuno");
+	articuno.atk =103;
+	articuno.def =159;
+	articuno.spd = 105;
+	articuno.maxhp = 165;
+	articuno.type1 = ice;
+	articuno.type2 = flying;
+	articuno.att[0] = steelwing;
+	articuno.att[1] = icebeam;
+	articuno.att[2] = sheercold;
+	articuno.att[3] = blizzard;
+
+strcpy(gyarados.pokename,"Gyarados");
+	gyarados.atk =159;
+	gyarados.def =99;
+	gyarados.spd = 101;
+	gyarados.maxhp = 170;
+	gyarados.type1 = water;
+	gyarados.type2 = flying;
+	gyarados.att[0] = crunch;
+	gyarados.att[1] = icebeam;
+	gyarados.att[2] = hydropump;
+	gyarados.att[3] = thunderbolt;
+
+strcpy(steelix.pokename,"Steelix");
+		steelix.atk =105;
+		steelix.def =200;
+		steelix.spd = 50;
+		steelix.maxhp = 150;
+		steelix.type1 = steel;
+		steelix.type2 = ground;
+		steelix.att[0] = earthquake;
+		steelix.att[1] = rockslide;
+		steelix.att[2] = irontail;
+		steelix.att[3] = fissure;
+
+strcpy(kabutops.pokename,"Kabutops");
+		kabutops.atk =130;
+		kabutops.def =115;
+		kabutops.spd = 100;
+		kabutops.maxhp = 135;
+		kabutops.type1 = rock;
+		kabutops.type2 = water;
+		kabutops.att[0] = ancientpower;
+		kabutops.att[1] = slash;
+		kabutops.att[2] = megadrain;
+		kabutops.att[3] = mudshot;
+
+strcpy(graveler.pokename,"Graveler");
+		graveler.atk =143;
+		graveler.def =150;
+		graveler.spd = 65;
+		graveler.maxhp = 155;
+		graveler.type1 = rock;
+		graveler.type2 = ground;
+		graveler.att[0] = earthquake;
+		graveler.att[1] = rockslide;
+		graveler.att[2] = megapunch;
+		graveler.att[3] = mudshot;
+
+
+
+strcpy(starmie.pokename,"Starmie");
+		starmie.atk =104;
+		starmie.def =105;
+		starmie.spd = 135;
+		starmie.maxhp = 135;
+		starmie.type1 = water;
+		starmie.type2 = psychic;
+		starmie.att[0] = recover;
+		starmie.att[1] = psychicattack;
+		starmie.att[2] = thunder;
+		starmie.att[3] = hydropump;
+
+strcpy(lanturn.pokename,"Lanturn");
+		lanturn.atk =104;
+		lanturn.def =105;
+		lanturn.spd = 135;
+		lanturn.maxhp = 135;
+		lanturn.type1 = water;
+		lanturn.type2 = electr;
+		lanturn.att[0] = thunderbolt;
+		lanturn.att[1] = icebeam;
+		lanturn.att[2] = thunderwave;
+		lanturn.att[3] = hydropump;
+
+strcpy(electabuzz.pokename,"Electabuzz");
+		electabuzz.atk =113;
+		electabuzz.def =77;
+		electabuzz.spd = 125;
+		electabuzz.maxhp = 140;
+		electabuzz.type1 = electr;
+		electabuzz.type2 = none;
+		electabuzz.att[0] = thunderbolt;
+		electabuzz.att[1] = thunderpunch;
+		electabuzz.att[2] = thunderwave;
+		electabuzz.att[3] = takedown;
+
+strcpy(ninetales.pokename,"Ninetales");
+		ninetales.atk =100;
+		ninetales.def =110;
+		ninetales.spd = 120;
+		ninetales.maxhp = 148;
+		ninetales.type1 = fire;
+		ninetales.type2 = none;
+		ninetales.att[0] = flamethrower;
+		ninetales.att[1] = flamewheel;
+		ninetales.att[2] = willowisp;
+		ninetales.att[3] = takedown;
+
+strcpy(magmar.pokename,"Magmar");
+		magmar.atk =118;
+		magmar.def =89;
+		magmar.spd = 113;
+		magmar.maxhp = 140;
+		magmar.type1 = fire;
+		magmar.type2 = none;
+		magmar.att[0] = flamethrower;
+		magmar.att[1] = firepunch;
+		magmar.att[2] = smokescreen;
+		magmar.att[3] = dynamicpunch;
+
+
+strcpy(arcanine.pokename,"Arcanine");
+		arcanine.atk =125;
+		arcanine.def =100;
+		arcanine.spd = 115;
+		arcanine.maxhp = 165;
+		arcanine.type1 = fire;
+		arcanine.type2 = none;
+		arcanine.att[0] = extremespeed;
+		arcanine.att[1] = flamethrower;
+		arcanine.att[2] = overheat;
+		arcanine.att[3] = earthquake;
+
+strcpy(gengar.pokename,"Gengar");
+		gengar.atk =118;
+		gengar.def =88;
+		gengar.spd = 130;
+		gengar.maxhp = 135;
+		gengar.type1 = ghost;
+		gengar.type2 = poison;
+		gengar.att[0] = shadowball;
+		gengar.att[1] = sludgebomb;
+		gengar.att[2] = thunderbolt;
+		gengar.att[3] = psychicattack;
+
+
+
+strcpy(dragonite.pokename,"Dragonite");
+		dragonite.atk =135;
+		dragonite.def =118;
+		dragonite.spd = 100;
+		dragonite.maxhp = 166;
+		dragonite.type1 = dragon;
+		dragonite.type2 = flying;
+		dragonite.att[0] = thunderbolt;
+		dragonite.att[1] = aerialace;
+		dragonite.att[2] = dragonclaw;
+		dragonite.att[3] = hyperbeam;
+
+strcpy(raichu.pokename,"Raichu");
+		raichu.atk =111;
+		raichu.def =85;
+		raichu.spd = 120;
+		raichu.maxhp = 135;
+		raichu.type1 = electr;
+		raichu.type2 = none;
+		raichu.att[0] = thunderbolt;
+		raichu.att[1] = thunderwave;
+		raichu.att[2] = megapunch;
+		raichu.att[3] = swordsdance;
+
+strcpy(magneton.pokename,"Magneton");
+		magneton.atk =111;
+		magneton.def =103;
+		magneton.spd = 90;
+		magneton.maxhp = 125;
+		magneton.type1 = electr;
+		magneton.type2 = steel;
+		magneton.att[0] = thunderbolt;
+		magneton.att[1] = thunderwave;
+		magneton.att[2] = takedown;
+		magneton.att[3] = shockwave;
+
+	strcpy(muk.pokename,"Muk");
+		muk.atk =130;
+		muk.def =108;
+		muk.spd = 70;
+		muk.maxhp = 180;
+		muk.type1 = poison;
+		muk.type2 = none;
+		muk.att[0] = acid;
+		muk.att[1] = toxic;
+		muk.att[2] = hyperbeam;
+		muk.att[3] = sludgebomb;
+
+
+	strcpy(crobat.pokename,"Crobat");
+		crobat.atk =100;
+		crobat.def =100;
+		crobat.spd = 150;
+		crobat.maxhp = 160;
+		crobat.type1 = poison;
+		crobat.type2 = flying;
+		crobat.att[0] = gigadrain;
+		crobat.att[1] = toxic;
+		crobat.att[2] = aerialace;
+		crobat.att[3] = sludgebomb;
+
+	strcpy(weezing.pokename,"Weezing");
+		weezing.atk =111;
+		weezing.def =120;
+		weezing.spd = 80;
+		weezing.maxhp = 140;
+		weezing.type1 = poison;
+		weezing.type2 = none;
+		weezing.att[0] = fireblast;
+		weezing.att[1] = thunderbolt;
+		weezing.att[2] = hyperbeam;
+		weezing.att[3] = sludgebomb;
+
+
+	strcpy(slowking.pokename,"Slowking");
+		slowking.atk =106;
+		slowking.def =115;
+		slowking.spd = 50;
+		slowking.maxhp = 170;
+		slowking.type1 = water;
+		slowking.type2 = psychic;
+		slowking.att[0] = psychicattack;
+		slowking.att[1] = surf;
+		slowking.att[2] = shadowball;
+		slowking.att[3] = earthquake;
+
+	strcpy(alakazam.pokename,"Alakazam");
+		alakazam.atk =106;
+		alakazam.def =80;
+		alakazam.spd = 140;
+		alakazam.maxhp = 130;
+		alakazam.type1 = psychic;
+		alakazam.type2 = none;
+		alakazam.att[0] = psychicattack;
+		alakazam.att[1] = recover;
+		alakazam.att[2] = shadowball;
+		alakazam.att[3] = shockwave;
+
+strcpy(arbok.pokename,"Arbok");
+	arbok.atk =115;
+	arbok.def =88;
+	arbok.spd = 100;
+	arbok.maxhp = 135;
+	arbok.type1 = poison;
+	arbok.type2 = none;
+	arbok.att[0] = acid;
+	arbok.att[1] = toxic;
+	arbok.att[2] = poisonpowder;
+	arbok.att[3] = sludgebomb;
+
+strcpy(aerodactyl.pokename,"Aerodactyl");
+	aerodactyl.atk = 100;
+	aerodactyl.def = 90;
+	aerodactyl.spd = 150;
+	aerodactyl.maxhp = 155;
+	aerodactyl.type1 = rock;
+	aerodactyl.type2 = flying;
+	aerodactyl.att[0] = ancientpower;
+	aerodactyl.att[1] = rockslide;
+	aerodactyl.att[2] = aerialace;
+	aerodactyl.att[3] = crunch;
+
+strcpy(kangaskhan.pokename,"Kangaskhan");
+	kangaskhan.atk = 100;
+	kangaskhan.def = 90;
+	kangaskhan.spd = 150;
+	kangaskhan.maxhp = 155;
+	kangaskhan.type1 = normal;
+	kangaskhan.type2 = none;
+	kangaskhan.att[0] = megapunch;
+	kangaskhan.att[1] = earthquake;
+	kangaskhan.att[2] = aerialace;
+	kangaskhan.att[3] = rest;
+
+strcpy(persian.pokename,"Persian");
+	persian.atk = 90;
+	persian.def = 83;
+	persian.spd = 135;
+	persian.maxhp = 140;
+	persian.type1 = normal;
+	persian.type2 = none;
+	persian.att[0] = payday;
+	persian.att[1] = slash;
+	persian.att[2] = takedown;
+	persian.att[3] = growl;
+
+strcpy(rhydon.pokename,"Rhydon");
+	rhydon.atk = 100;
+	rhydon.def = 100;
+	rhydon.spd = 60;
+	rhydon.maxhp = 180;
+	rhydon.type1 = rock;
+	rhydon.type2 = ground;
+	rhydon.att[0] = horndrill;
+	rhydon.att[1] = slash;
+	rhydon.att[2] = takedown;
+	rhydon.att[3] = earthquake;
+
+
+
+
+
+
+strcpy(ditto.pokename,"Ditto");
+	ditto.atk =74;
+	ditto.def =68;
+	ditto.spd = 68;
+	ditto.maxhp = 123;
+	ditto.type1 = normal;
+	ditto.type2 = none;
+	ditto.att[0] = transform;
+	ditto.att[1] = dash;
+	ditto.att[2] = dash;
+	ditto.att[3] = dash;
+
+strcpy(vileplume.pokename,"Vileplume");
+	vileplume.atk =110;
+	vileplume.def =108;
+	vileplume.spd = 70;
+	vileplume.maxhp = 150;
+	vileplume.type1 = grass;
+	vileplume.type2 = poison;
+	vileplume.att[0] = sleeppowder;
+	vileplume.att[1] = gigadrain;
+	vileplume.att[2] = synthesis;
+	vileplume.att[3] = solarbeam;
+
+strcpy(victreebel.pokename,"Victreebel");
+	victreebel.atk =125;
+	victreebel.def =83;
+	victreebel.spd = 90;
+	victreebel.maxhp = 155;
+	victreebel.type1 = grass;
+	victreebel.type2 = poison;
+	victreebel.att[0] = stunspore;
+	victreebel.att[1] = leafblade;
+	victreebel.att[2] = toxic;
+	victreebel.att[3] = solarbeam;
+
+strcpy(venomoth.pokename,"Venomoth");
+	venomoth.atk =96;
+	venomoth.def =88;
+	venomoth.spd = 110;
+	venomoth.maxhp = 145;
+	venomoth.type1 = bug;
+	venomoth.type2 = poison;
+	venomoth.att[0] = psychicattack;
+	venomoth.att[1] = poisonpowder;
+	venomoth.att[2] = toxic;
+	venomoth.att[3] = aerialace;
+
+strcpy(magikarp.pokename,"Magikarp");
+	magikarp.atk =16;
+	magikarp.def =60;
+	magikarp.spd = 85;
+	magikarp.maxhp = 80;
+	magikarp.type1 = water;
+	magikarp.type2 = none;
+	magikarp.att[0] = tackle;
+	magikarp.att[1] = splash;
+	magikarp.att[2] = dash;
+	magikarp.att[3] = dash;
+
+strcpy(piloswine.pokename,"Piloswine");
+	piloswine.atk =100;
+	piloswine.def =91;
+	piloswine.spd = 70;
+	piloswine.maxhp = 175;
+	piloswine.type1 = ice;
+	piloswine.type2 = ground;
+	piloswine.att[0] = earthquake;
+	piloswine.att[1] = rockslide;
+	piloswine.att[2] = doubleedge;
+	piloswine.att[3] = blizzard;
+
+strcpy(lapras.pokename,"Lapras");
+	lapras.atk =96;
+	lapras.def =110;
+	lapras.spd = 80;
+	lapras.maxhp = 205;
+	lapras.type1 = water;
+	lapras.type2 = ice;
+	lapras.att[0] = psychicattack;
+	lapras.att[1] = thunder;
+	lapras.att[2] = surf;
+	lapras.att[3] = icebeam;
+
+strcpy(jynx.pokename,"Jynx");
+	jynx.atk =100;
+	jynx.def =80;
+	jynx.spd = 115;
+	jynx.maxhp = 140;
+	jynx.type1 = ice;
+	jynx.type2 = psychic;
+	jynx.att[0] = psychicattack;
+	jynx.att[1] = bodyslam;
+	jynx.att[2] = shadowball;
+	jynx.att[3] = icebeam;
+
+strcpy(hitmonchan.pokename,"Hitmonchan");
+	hitmonchan.atk =85;
+	hitmonchan.def =120;
+	hitmonchan.spd = 96;
+	hitmonchan.maxhp = 125;
+	hitmonchan.type1 = fight;
+	hitmonchan.type2 = none;
+	hitmonchan.att[0] = firepunch;
+	hitmonchan.att[1] = thunderpunch;
+	hitmonchan.att[2] = skyuppercut;
+	hitmonchan.att[3] = rockslide;
+
+strcpy(machamp.pokename,"Machamp");
+	machamp.atk =85;
+	machamp.def =120;
+	machamp.spd = 96;
+	machamp.maxhp = 125;
+	machamp.type1 = fight;
+	machamp.type2 = none;
+	machamp.att[0] = fissure;
+	machamp.att[1] = brickbreak;
+	machamp.att[2] = strength;
+	machamp.att[3] = rockslide;
+
+strcpy(entei.pokename,"Entei");
+	entei.atk = 125;
+	entei.def =100;
+	entei.spd = 120;
+	entei.maxhp = 190;
+	entei.type1 = fire;
+	entei.type2 = none;
+	entei.att[0] = earthquake;
+	entei.att[1] = fireblast;
+	entei.att[2] = growl;
+	entei.att[3] = flamewheel;
+
+strcpy(raikou.pokename,"Raikou");
+	raikou.atk =118;
+	raikou.def =110;
+	raikou.spd = 135;
+	raikou.maxhp = 165;
+	raikou.type1 = electr;
+	raikou.type2 = none;
+	raikou.att[0] = shockwave;
+	raikou.att[1] = extremespeed;
+	raikou.att[2] = growl;
+	raikou.att[3] = thunder;
+
+
+strcpy(suicune.pokename,"Suicune");
+	suicune.atk =100;
+	suicune.def =135;
+	suicune.spd = 105;
+	suicune.maxhp = 175;
+	suicune.type1 = water;
+	suicune.type2 = none;
+	suicune.att[0] = surf;
+	suicune.att[1] = hydropump;
+	suicune.att[2] = icebeam;
+	suicune.att[3] = sheercold;
+
+strcpy(hooh.pokename,"Ho-oh");
+	hooh.atk =130;
+	hooh.def =72;
+	hooh.spd = 91;
+	hooh.maxhp = 175;
+	hooh.type1 = fire;
+	hooh.type2 = flying;
+	hooh.att[0] = aerialace;
+	hooh.att[1] = fireblast;
+	hooh.att[2] = recover;
+	hooh.att[3] = skyattack;
+
+strcpy(lugia.pokename,"Lugia");
+	lugia.atk =100;
+	lugia.def =140;
+	lugia.spd = 141;
+	lugia.maxhp = 181;
+	lugia.type1 = psychic;
+	lugia.type2 = flying;
+	lugia.att[0] = aerialace;
+	lugia.att[1] = psychicattack;
+	lugia.att[2] = recover;
+	lugia.att[3] = skyattack;
+
+strcpy(groudon.pokename,"Groudon");
+	groudon.atk =140;
+	groudon.def =135;
+	groudon.spd = 110;
+	groudon.maxhp = 175;
+	groudon.type1 = ground;
+	groudon.type2 = none;
+	groudon.att[0] = fissure;
+	groudon.att[1] = fireblast;
+	groudon.att[2] = rest;
+	groudon.att[3] = solarbeam;
+
+strcpy(kyogre.pokename,"Kyogre");
+	kyogre.atk =143;
+	kyogre.def =135;
+	kyogre.spd = 110;
+	kyogre.maxhp = 175;
+	kyogre.type1 = water;
+	kyogre.type2 = none;
+	kyogre.att[0] = hydropump;
+	kyogre.att[1] = sheercold;
+	kyogre.att[2] = blizzard;
+	kyogre.att[3] = rest;
+
+strcpy(rayquaza.pokename,"Rayquaza");
+	rayquaza.atk =170;
+	rayquaza.def =110;
+	rayquaza.spd = 115;
+	rayquaza.maxhp = 180;
+	rayquaza.type1 = dragon;
+	rayquaza.type2 = flying;
+	rayquaza.att[0] = thunder;
+	rayquaza.att[1] = dragonclaw;
+	rayquaza.att[2] = icebeam;
+	rayquaza.att[3] = skyattack;
+
+strcpy(latios.pokename,"Latios");
+	latios.atk =128;
+	latios.def =115;
+	latios.spd = 130;
+	latios.maxhp = 155;
+	latios.type1 = dragon;
+	latios.type2 = psychic;
+	latios.att[0] = aerialace;
+	latios.att[1] = dragonclaw;
+	latios.att[2] = psychicattack;
+	latios.att[3] = rest;
+
+strcpy(latias.pokename,"Latias");
+	latias.atk =114;
+	latias.def =130;
+	latias.spd = 130;
+	latias.maxhp = 155;
+	latias.type1 = dragon;
+	latias.type2 = psychic;
+	latias.att[0] = aerialace;
+	latias.att[1] = dragonclaw;
+	latias.att[2] = psychicattack;
+	latias.att[3] = rest;
+
+strcpy(jirachi.pokename,"Jirachi");
+	jirachi.atk =138;
+	jirachi.def =120;
+	jirachi.spd = 120;
+	jirachi.maxhp = 175;
+	jirachi.type1 = steel;
+	jirachi.type2 = psychic;
+	jirachi.att[0] = doomdesire;
+	jirachi.att[1] = psychicattack;
+	jirachi.att[2] = thunderbolt;
+	jirachi.att[3] = rest;
+*/
+
+	red.SetPkmn(0,"charizard");
+	red.SetPkmn(1,"typhlosion");
+	red.SetPkmn(2,"blaziken");
+
+	blue.SetPkmn(0,"blastoise");
+	blue.SetPkmn(1,"feraligatr");
+	blue.SetPkmn(2,"swampert");
+
+	green.SetPkmn(0,"venusaur");
+	green.SetPkmn(1,"meganium");
+	green.SetPkmn(2,"sceptile");
+
+	ash.SetPkmn(0,"pikachu");
+	ash.SetPkmn(1,"charizard");
+	ash.SetPkmn(2,"bulbasaur");
+
+	brock.SetPkmn(0,"kabutops");
+	brock.SetPkmn(1,"graveler");
+	brock.SetPkmn(2,"steelix");
+
+	misty.SetPkmn(0,"gyarados");
+	misty.SetPkmn(1,"lanturn");
+	misty.SetPkmn(2,"starmie");
+
+	ltsurge.SetPkmn(0,"magneton");
+	ltsurge.SetPkmn(1,"electabuzz");
+	ltsurge.SetPkmn(2,"raichu");
+
+	erika.SetPkmn(0,"vileplume");
+	erika.SetPkmn(1,"victreebel");
+	erika.SetPkmn(2,"venusaur");
+
+	koga.SetPkmn(0,"weezing");
+	koga.SetPkmn(1,"muk");
+	koga.SetPkmn(2,"crobat");
+
+	sabrina.SetPkmn(0,"alakazam");
+	sabrina.SetPkmn(1,"slowking");
+	sabrina.SetPkmn(2,"venomoth");
+
+	blaine.SetPkmn(0,"ninetales");
+	blaine.SetPkmn(1,"arcanine");
+	blaine.SetPkmn(2,"magmar");
+
+	giovanni.SetPkmn(0,"persian");
+	giovanni.SetPkmn(1,"rhydon");
+	giovanni.SetPkmn(2,"kangaskhan");
+
+	lorelei.SetPkmn(0,"piloswine");
+	lorelei.SetPkmn(1,"lapras");
+	lorelei.SetPkmn(2,"jynx");
+
+	bruno.SetPkmn(0,"steelix");
+	bruno.SetPkmn(1,"hitmonchan");
+	bruno.SetPkmn(2,"machamp");
+
+	agatha.SetPkmn(0,"arbok");
+	agatha.SetPkmn(1,"crobat");
+	agatha.SetPkmn(2,"gengar");
+
+	lance.SetPkmn(0,"gyarados");
+	lance.SetPkmn(1,"Aerodactyl");
+	lance.SetPkmn(2,"Dragonite");
+
+
+
+}
+
+
+#endif
+
+
+
+
